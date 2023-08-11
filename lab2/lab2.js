@@ -1,5 +1,5 @@
 const body = document.querySelector('body');
-body.setAttribute('style', 'display:flex;width:100vw;height:100vh');
+body.setAttribute('style', 'display:flex;width:100vw;height:100vh;justify-content:space-around;align-items:center;');
 
 let input = document.createElement('input');
 input.value = 5;
@@ -8,12 +8,12 @@ let submitButton = document.createElement('button');
 let valuesDiv = document.createElement('div');
 let submitButton_clicked = false;
 
-valuesDiv.setAttribute('style' , 'width:100px;height:60px; display: flex;left:0;top:0;flex-direction: column;align-items: space-around; justify-content: stretch;position:absolute;');
+valuesDiv.setAttribute('style' , 'border:3px solid black;border-radius:10px;display:flex;flex-direction:column;align-items:stretch;gap:5vw;justify-content:center;gap:1vw;');
 input.setAttribute('type', 'number');
 submitButton.setAttribute('type', 'submit');
-submitButton.setAttribute('style', 'background-color:coral;flex:1');
-input.setAttribute('style', 'background-color:black;color:white;flex:1;text-align:center;');
-inputLabel.setAttribute('style', 'background-color:coral;flex:1;text-align:center;');
+submitButton.setAttribute('style', 'background-color:coral;border:1px solid black;border-radius:10px;');
+input.setAttribute('style', 'background-color:black;color:white;text-align:center;border:1px solid black;border-radius:10px;');
+inputLabel.setAttribute('style', 'background-color:coral;text-align:center;border:1px solid black;border-radius:10px;');
 inputLabel.textContent = 'No of Divs: ';
 submitButton.textContent = 'generate';
 
@@ -39,7 +39,7 @@ function darkenRGBColor(rgbString, factor) {
 function prepareLayout(no_of_divs){   
     const parentDiv = document.createElement('div');
     
-    const parentStyle = 'display:flex;flex:1;flex-wrap:wrap;justify-content:center;align-content:center;column-gap:1vw;row-gap:1vw;';
+    const parentStyle = 'display:flex;width:80vw;height:80vw;flex-wrap:wrap;justify-content:center;align-content:center;gap:1vw;border:3px solid black;border-radius:10px;';
 
     parentDiv.setAttribute('style', parentStyle);
     parentDiv.classList.add('container');
@@ -50,7 +50,7 @@ function prepareLayout(no_of_divs){
         let div_saturation = Math.floor(Math.random() * 100);
         let div_light = Math.floor((Math.random() * 50) + 40);
         
-        let divStyle = `width:calc((100vw / ${no_of_divs}) - 1vw);height:calc((100vw / ${no_of_divs}) - 1vw);border:1px solid black;background-color:hsl(${div_hue}, ${div_saturation}%, ${div_light}%);`;
+        let divStyle = `width:calc((80vw / ${no_of_divs}) - 1vw);height:calc((80vw / ${no_of_divs}) - 1vw);border:1px solid black;background-color:hsl(${div_hue}, ${div_saturation}%, ${div_light}%);border-radius:10px;`;
         
         div.setAttribute('style', divStyle);
         
