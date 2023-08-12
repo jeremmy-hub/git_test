@@ -8,6 +8,7 @@ let submitButton = document.createElement('button');
 let valuesDiv = document.createElement('div');
 let submitButton_clicked = false;
 
+
 valuesDiv.setAttribute('style' , 'border:3px solid black;border-radius:10px;display:flex;flex-direction:column;align-items:stretch;gap:5vw;justify-content:center;gap:1vw;');
 input.setAttribute('type', 'number');
 submitButton.setAttribute('type', 'submit');
@@ -49,8 +50,9 @@ function prepareLayout(no_of_divs){
         let div_hue = Math.floor(Math.random() * 360);
         let div_saturation = Math.floor(Math.random() * 100);
         let div_light = Math.floor((Math.random() * 50) + 40);
+    
         
-        let divStyle = `width:calc((80vw / ${no_of_divs}) - 1vw);height:calc((80vw / ${no_of_divs}) - 1vw);border:1px solid black;background-color:hsl(${div_hue}, ${div_saturation}%, ${div_light}%);border-radius:10px;`;
+        let divStyle = `width:calc((80vw / ${no_of_divs}) - 1vw);height:calc((80vw / ${no_of_divs}) - 1vw);border:4px solid black;background-color:hsl(${div_hue}, ${div_saturation}%, ${div_light}%);border-radius:5px;`;
         
         div.setAttribute('style', divStyle);
         
@@ -60,6 +62,9 @@ function prepareLayout(no_of_divs){
             let background_color = this.style.backgroundColor;
             let newBackgroundColor = darkenRGBColor(background_color, 30);
             this.style.backgroundColor = newBackgroundColor;
+            if(this.style.backgroundColor === 'rgb(0, 0, 0)'){
+                this.style.visibility = 'hidden';
+            }
         });
 
         parentDiv.appendChild(div);
@@ -73,8 +78,13 @@ submitButton.onclick = function(){
         let to_be_removed = body.children[2];
         body.removeChild(to_be_removed);
     } 
-    body.appendChild(prepareLayout(input.value));
-    submitButton_clicked = true;
+    try{
+        body.appendChild(prepareLayout(Math.abs(input.value)));
+        submitButton_clicked = true;
+    }
+    catch (e){
+        console.log(e);
+    }
 }
 
 
