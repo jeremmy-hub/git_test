@@ -1,0 +1,258 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: #ffffffe0;
+    --bg-color: rgba(0, 0, 0, 0.82);
+    --text-color: rgba(26, 18, 18, 0.752);
+}
+
+
+body{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.82);
+    height: 100vh;
+    width: 100vw;
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    color: var(--text-color);
+}
+
+
+.container{
+    display: flex;
+    flex-direction: row;
+    background-color: #ffffffe0;
+    min-width: 80vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    overflow: auto;
+
+}
+
+
+.column_display{
+    flex: .45;
+    display: flex;
+    flex-direction: column;
+    background-image: url('../pexels-marina-leonova-7717992.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.column_form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3vw;
+    gap: 3%;
+    
+}
+
+
+.column_form_section1{
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    text-align: left;
+}
+
+
+.page_paragraph{
+    font-weight: 600;
+    font-size: 3vmin;
+    display: flex;
+    flex: 1;
+    padding-right: 5%;
+    color: var(--text-color);
+    
+}
+
+
+.column_form_section2, .column_form_section3{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    
+
+}
+
+
+.names, .contacts, .passwords{
+    display: flex;
+    position: relative;
+    flex: 1;
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 5vmin;
+}
+
+
+.fa-eye-slash, .fa-eye{
+    position: absolute;
+    right: -10%;
+    top: 55%;
+    color: grey;
+}
+
+
+.names > span, .contacts > span, .passwords > span{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+
+#account_create_button{
+    color: white;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: green;
+    padding: .8vw;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+
+#account_create_button:hover{
+    transform: scale(1.02);
+    box-shadow: 1px -2px 10px grey;
+}
+
+
+a{
+    color: green;
+    text-decoration: none;
+}
+
+
+input{
+    border: none;
+    text-align: center;
+    flex: 1;
+    border-bottom:  .5px solid rgb(200 181 181);
+    border-right:  .5px solid rgb(200 181 181);
+    background-color: #f0dfdf82;
+    outline: none;
+    border-radius: 4px;
+    font-size: .6rem;
+    letter-spacing: .1rem;
+}
+
+
+input:focus{
+    border-bottom: 1.2px solid rgb(8, 117, 7);
+    border-right: 1.2px solid rgb(28, 117, 7);
+    outline: none;
+    /* background-color: yellow; */
+}
+
+
+label{
+    font-size: .9vmax;
+    font-weight: 400;
+    letter-spacing: .1em;
+}
+
+
+.column_display > span{
+    width: 100%;
+    height: 20vh;
+    background-color: lightgrey;
+    opacity: 0.4;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 8vmax;
+    font-family:'Courier New', Courier, monospace
+}
+
+
+.requirements{
+    color: red;
+    font-size: 10px;
+    position: relative;
+    display: none;
+    transition: display 3s;
+}
+
+
+@media screen and (max-width:450px){
+    body{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--bg-color);
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        overflow: auto;
+    }
+    
+    
+    .page_paragraph{
+        font-weight: 600;
+        font-size: 4vmin;
+        display: flex;
+    }
+
+    .container{
+        display: flex;
+        flex-direction: column;
+        background-color: var(--primary-color);
+        min-width: 80vw;
+        max-width: 100vw;
+        min-height: 100vh;
+        overflow: auto;
+
+    }
+
+    .column_form {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 2vw;
+        gap: 3%;
+    
+    } 
+    .names, .contacts, .passwords{
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        justify-content: space-between;
+        align-content: space-between;
+        gap: 5vmin;
+    
+
+    } 
+    
+    .column_display>span{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30vh;
+        background-color: lightgrey;
+        opacity: 0.3;
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 10vmax;
+        font-family:'Norse Bold'
+}
+}
+
+
+
