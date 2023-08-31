@@ -17,7 +17,7 @@ let passwordHintvisible = false;
 let lowercases = /[a-z]/;
 let uppercases = /[A-Z]/;
 let digits = /\d/;
-let specialcharacters = /!@#\$%\^&\*()_\+}{''/;
+let specialcharacters = /[!@#$%^&*()_+{}\[\]:;<>,.?\\/\|]/;
 
 let firstNameIsValid = false;
 let lastNameIsValid = false;
@@ -67,16 +67,25 @@ newPassword.addEventListener('input', function (event){
     eye.style = 'top: 17%;';  
 })
 
+newPassword.onfocus = function(){passwordHint.style.opacity = '.9';}
+
+newPassword.addEventListener('blur', function (event){
+    passwordHint.style.opacity = '0.3';
+    let parseString = event.target.value.split('');
+    checkPasswordIntergrity(parseString); 
+    eye.style = 'top: 17%;';
+})
+
 
 function checkPasswordIntergrity(password){
     (password.some(x=>x.match(/[a-z]/)))?lowercase_check.style.color='green':lowercase_check.style.color='red';
 
-    (password.some(x=> x.match(/[A-Z]/)))?uppercase_check.style.color = 'green':uppercase_check.style.color = 'red';
+    (password.some(x=> x.match(uppercases)))?uppercase_check.style.color = 'green':uppercase_check.style.color = 'red';
 
-    (password.some(x=> x.match(/\d/)))?digit_check.style.color = 'green':digit_check.style.color = 'red';
+    (password.some(x=> x.match(digits)))?digit_check.style.color = 'green':digit_check.style.color = 'red';
 
 
-    (password.some(x=> x.match(/[!@#$%^&*()_+{}\[\]:;<>,.?\\/\|]/)))?specialchar_check.style.color = 'green':specialchar_check.style.color = 'red';
+    (password.some(x=> x.match(specialcharacters)))?specialchar_check.style.color = 'green':specialchar_check.style.color = 'red';
 
     password.length>=8?charlength_check.style.color='green':charlength_check.style.color='red';
 

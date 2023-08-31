@@ -19,87 +19,160 @@
         <div class="column_form">
             
             <div class="column_form_section1">
-               <p class="page_paragraph">This is not a real online service! You know what you need something like this in your life to help you realize your deepest dreams. signup now to get started,<br/><br>You know you want to</p>
+               
+                <p class="page_paragraph">This is not a real online service! You know what you need something like this in your life to help you realize your deepest dreams. signup now to get started,
+                <br/>
+                <br>
+                You know you want to
+                </p>
+
             </div>
            
             <div class="column_form_section2">
+                
                 Lets do this! <br>
+                
                 <form action="#" method="get" id="signupForm">
                    
                     <div class="names">
-                         <span>
-                            <label for="firstname">FIRSTNAME*:</label>
+                        
+                        <span>
+                            
+                            <label for="firstname">FIRSTNAME
+                                <span class="requiredField">*</span>:
+                            </label>
+                            
                             <br>
+                            
                             <input type="text" id="firstname" name="firstName" placeholder="John" maxlength="20">
+                            
                             <br>
+                        
                         </span>
                    
                         <span>
-                            <label for="lastname">LASTNAME*: </label>
+                            
+                            <label for="lastname">LASTNAME
+                                <span class="requiredField">*</span>: 
+                            </label>
+                            
                             <br>
+                            
                             <input type="text" id="lastname" name="lastName" placeholder="Doo" maxlength="20" required>
+                            
                             <br>
+                        
                         </span>
+                    
                     </div>
                    
                     <div class="contacts">
+                        
                         <span>
-                            <label for="email">EMAIL*: </label>
+                            
+                            <label for="email">EMAIL
+                                <span class="requiredField">*</span>: 
+                            </label>
+                            
                             <br>
+                            
                             <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+                            
                             <br>
+                        
                         </span>
                     
                         <span>
+                            
                             <label for="tel">PHONE NUMBER: </label>
+                            
                             <br>
+                            
                             <input type="tel" id="tel" name="tel" placeholder="+255 723 451 245" pattern="^(?:\+\d{1,3}\s?)?(?:\(\d{1,4}\)\s?)?[0-9\- ]+$" required>
+                            
                             <br>
+                       
                         </span>
+                    
                     </div>
                    
                     <div class="passwords">
                         
                             <span>
+                                
                                 <label for="newPassword">PASSWORD: </label>
+                                
                                 <br>
+                                
                                 <input type="password" id="newPassword" name="newPassword" pattern='^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&+=!])(?=.*[a-zA-Z0-9@#$%^&+=!]).{8,}$' required>
                                 
                                 <div class="requirements">
 
 
                                     <span class="lowercase_check">
-                                     <i class="fa-regular fa-circle-check"></i>
+                                     
+                                        <i class="fa-regular fa-circle-check"></i>
+                                        
                                         should contain a lowercase character
-                                    </span><br>
+                                    
+                                    </span>
+                                    
+                                    <br>
 
                                     <span class="uppercase_check">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    should contain an uppercase character
-                                    </span><br>
+                                    
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    
+                                        should contain an uppercase character
+                                   
+                                    </span>
+                                    
+                                    <br>
 
                                      <span class="digit_check">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    should contain a digit
-                                    </span><br>
+                                    
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    
+                                        should contain a digit
+                                   
+                                    </span>
+                                    
+                                    <br>
 
                                     <span class="specialchar_check">
-                                    <i class="fa-regular fa-circle-check"></i>
-                                    should contain a special character</span><br>
+                                    
+                                        <i class="fa-regular fa-circle-check"></i>
+                                    
+                                        should contain a special character
+                                        
+                                    </span>
+                                            
+                                    <br>
                                 
                                     <span class="charlength_check">
+                                        
                                         <i class="fa-regular fa-circle-check"></i>
+                                        
                                         atleast 8 characters in length
-                                    </span><br>
+                                    
+                                    </span>
+                                    
+                                    <br>
 
                                 
 
                                 </div>
+                           
                             </span>
                             
                             <span>
-                                <label for="confirmPassword">CONFIRM PASSWORD: </label><br>
+                                
+                                <label for="confirmPassword">CONFIRM PASSWORD: </label>
+                                
+                                <br>
+                                
                                 <input type="password" id="confirmPassword" name="confirmPassword" required>
+                            
                             </span>
                     
                             <i class="fa-solid fa-eye" id="eye"></i>
@@ -108,18 +181,27 @@
                    
                    
                 </form>
+            
             </div>
            
             <div class="column_form_section3">
+                
                 <button id="account_create_button" formaction="#" form="signupForm">Create Account</button>
               
-                <span>Already have an account?<span>          </span>
+                <span>Already have an account?<span>  <!-- space-->>        
+                
+                </span>
+                
                 <a href="#">Log in</a> 
-                 </span>
+                 
+            </span>
                 
             </div>
+        
         </div>
+    
     </div>
     
 </body>
+
 </html>
