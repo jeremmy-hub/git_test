@@ -1,0 +1,202 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --default-size: 100vh;
+    --bg-color: hsl(120, 4%, 25%);
+    /* --primary-color: hsl(15, 68%, 54%); */
+    --primary-color: orangered;
+    --btn-color: #8C432B;
+}
+
+
+body{
+    background-color: ;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    overflow: hidden;
+    background-image: url("/lab3/tik-tak-toe-game-app/games.avif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr 12fr 1fr;
+    height: var(--default-size);
+    grid-gap: calc((2 * var(--default-size)) / 100);
+    width: var(--default-size);
+    background-color: transparent;
+}
+
+
+.header-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    text-align: center;
+    gap: 2vw;
+    margin: 2vmin;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+
+.header-controls{
+    border: none;
+    display: grid;
+    padding-inline: 1vmin;
+    background-color: var(--bg-color);
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-family: 'Croissant One', cursive;
+    box-shadow: 0px 0px 50px #D9AB23;
+    color: orangered;
+}
+
+
+.options-container{
+    display: grid;
+    grid-template-columns: repeat(3, calc((20 * var(--default-size)) / 100));
+    grid-template-rows: repeat(3, calc((20 * var(--default-size)) / 100));
+    gap: 2vw;
+    padding: calc((5 * var(--default-size)) / 100);
+    justify-content: center;
+    
+}
+
+
+.game-options{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding: 0%;
+    font-size: 7vmax;
+    font-weight: 800;
+    font-family: 'Fuggles', cursive;
+    text-shadow: 1px 1px 10px #fff, -1px -1px 10px var(--primary-color);
+    color: var(--primary-color);
+    text-shadow: 0px 0px 2px black inset;
+    overflow: hidden;
+    border: 3px solid var(--btn-color);
+    background-size: calc((5 * var(--default-size)) / 100) calc(
+        (5 * var(--default-size)) / 100);
+    background-image: repeating-conic-gradient(
+        #5e5b5b 0deg,
+        #5e5b5b 90deg, 
+        hsl(120, 4%, 25%) 90deg,
+        hsl(120, 4%, 25%) 180deg, 
+        #5e5b5b 180deg, 
+        #5e5b5b 270deg, 
+        hsl(120, 4%, 25%) 270deg, 
+        hsl(120, 4%, 25%));
+    border-radius: 50%;
+    box-shadow: 1px 0px 10px var(--btn-color);
+}
+
+
+.game-options:hover{
+    box-shadow: 1px 0px 10px rgb(122, 110, 50);
+}
+
+
+.set-player-dialog{
+    --this-width: 40vw;
+     position:absolute; 
+     left: 50%; 
+     top: 50%; 
+     transform: translate(-50%, -50%); 
+     width: var(--this-width);
+     height: 20vw;
+     padding: calc((5 * var(--this-width) / 100 ));
+     background-color: var(--bg-color);
+     display: grid;
+     grid-template-rows: repeat(3, 1fr);
+     justify-content: space-around;
+     align-content: space-around;
+     color: orangered;
+     font-size: 2vmin;
+     letter-spacing: .5em;
+     font-weight: 900;
+     font-family: 'Croissant One', cursive;
+     border: .00005px solid var(--bg-color);
+     box-shadow: 0px 0px 200px 50px var(--primary-color);
+     border-radius: 4px;
+     overflow: hidden;
+     outline: 4px solid var(--bg-color);
+     outline-offset: 2px;
+}
+
+
+.dialog-choices-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10%;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+
+.dialog-button{
+    --border-radius-len: 5vw;
+    position: relative;
+    display: grid;
+    align-content: center;
+    background-color: var(--btn-color);
+    border: 1px solid var(--bg-color);
+    color: #fff;
+    font-size: 4vmin;
+    padding: 2vmin;
+    font-weight: 800;
+    font-family: 'Fuggles', cursive;
+    border-radius: var(--border-radius-len);
+    align-items: center;
+    outline: 2px solid var(--btn-color);
+}
+
+
+.set-player-dialog{
+    transition: 4s display linear;
+}
+
+
+.winner-dialog-controls{
+    background-color: var(--bg-color);
+    color: #fff;
+    font-weight: 800;
+    font-family: 'Fuggles', cursive;;
+    font-size: clamp(1vw, 1em, 2vmax);
+    letter-spacing: .5em;
+    border-radius: 4vmin;
+}
+
+
+.winning-class{
+    animation: winnerHover 5s ease-in-out infinite;
+}
+
+@keyframes winnerHover {
+    0%{ box-shadow: 0px 0px 10px 5px red;}
+    25%{box-shadow: 0px 0px 20px 5px rgb(191, 255, 0);}
+    50%{box-shadow: 0px 0px 30px 5px rgb(0, 34, 255);}
+    75%{box-shadow: 0px 0px 20px 5px red;}
+    100%{box-shadow: 0px 0px 10px 5px rgb(0,34,255);}
+}
+
+
+
+    
+
+

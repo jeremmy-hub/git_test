@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="library.css">
+    <script src="library.js" defer></script>
+    <script src="https://kit.fontawesome.com/fce4072f2f.js" crossorigin="anonymous" defer></script>
+</head>
+<body>
+<div class="container">
+    
+    <div class="item1">
+        <div class="hero-text">
+            <i class="fa-solid fa-landmark fa-lg"></i> 
+            <p class="hero-text-content">The Reading retreat</p>
+        </div>
+    </div>
+    
+    <div class="item2">
+        <div class="books-settings">
+            
+            <form class="book-info" action="#" method="post" noavalidate="">
+                <div class="settings-item">
+                    <label for="book-detail-1">Book Title:</label>
+                    <input type="text" id="book-detail-1" required name="book_title" placeholder="Beyond your confort zone">
+                </div>
+                
+                <div class="settings-item">
+                <label for="book-detail-2">Book Author:</label>
+                <input type="text" id="book-detail-2" required name="book_author" placeholder="Ben Carson">
+                </div>
+                
+                <div class="settings-item">
+                    <label for="book-detail-3">Book Pages:</label>
+                    <input type="number" id="book-detail-3" required name="book_pages" placeholder="678">
+                </div>
+                
+                <div class="settings-item">
+                    <label for="book-detail-4">Book Url:</label>
+                    <input type="url" id="book-detail-4" placeholder="https://sample.png" name="book_url">
+                </div>
+                
+                <div class="settings-item">
+                    <label for="book-detail-5">Book Language:</label>
+                    <input type="text" id="book-detail-5" placeholder="English" name="book_language">
+                </div>
+                
+                
+                <div class="settings-item">
+                    <input type="submit" id="book-detail-7" value="Add Book">
+                    <input type="reset" value="reset">
+                </div>
+            </form>
+        </div>
+
+        <div class="books-displayer">
+            
+            <div class="book book_1">
+                
+                
+                <i class="fa-solid fa-xmark"></i>
+                
+                
+                <div class="individual-book-title">
+                    <h5>bible</h5>
+                </div>
+
+                <div class="open-modal">
+                    <button class="open-modal-button">view</button>
+                </div>
+
+                <label class="switch">
+                <input type="checkbox">
+                <span class="slider"></span>
+
+                </label>
+               
+            </div>
+
+             
+            <dialog class="modal" id="modal">
+                    <p class="modal-book-title">Title: Bible</p>
+                    <p class="modal-book-author">Author: The Holy Spirit</p>
+                    <p class="modal-book-pages">Total pages: 3000</p>
+                    <p class="modal-book-language">Its written in Aramaic and Greek Languages</p>
+                    <button class="close-modal">close</button>
+               </dialog>
+
+          
+            
+        </div>
+    </div>
+</div>
+    
+</body>
+</html>
